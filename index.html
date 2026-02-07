@@ -51,7 +51,7 @@
       color: black;
       position: absolute;
       bottom: 25%;
-      left: 40%;
+      left: 38%;
     }
 
     .no-button {
@@ -76,11 +76,13 @@
 <div class="container" id="passwordScreen">
   <h1>🔒 Only for you</h1>
   <p>Enter the password 💖</p>
+
   <input type="password" id="passwordInput" placeholder="Password" />
-  
+
   <p style="font-size:0.95rem; opacity:0.8; margin-top:10px;">
-  Hint: what would i call you if you'd accept that i care about you
-</p>
+    Hint: What would I call you if you’d accept that I care about you 💗
+  </p>
+
   <button onclick="checkPassword()">Unlock</button>
 </div>
 
@@ -111,15 +113,17 @@
 
   const noBtn = document.getElementById("noBtn");
 
-  function moveNo() {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 60);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  }
+  if (noBtn) {
+    function moveNo() {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
 
-  noBtn.addEventListener("mouseenter", moveNo);
-  noBtn.addEventListener("touchstart", moveNo);
+    noBtn.addEventListener("mouseenter", moveNo);
+    noBtn.addEventListener("touchstart", moveNo);
+  }
 
   function handleYesClick() {
     document.body.innerHTML = `
@@ -142,4 +146,3 @@
 
 </body>
 </html>
-
