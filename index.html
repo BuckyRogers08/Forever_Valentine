@@ -87,13 +87,14 @@
 </div>
 
 <script>
-  const correctPassword = "MODAK";
+  const correctPassword ="test";
 
   function checkPassword() {
     const input = document
       .getElementById("passwordInput")
       .value
       .trim()          // removes spaces
+      .toLowerCase();  // ignores caps
 
     if (input === correctPassword.toLowerCase()) {
       document.getElementById("passwordScreen").style.display = "none";
